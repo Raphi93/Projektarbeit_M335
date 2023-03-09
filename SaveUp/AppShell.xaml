@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SaveUp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SaveUp"
+    xmlns:view="clr-namespace:SaveUp.View"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent
+            Title="Login"
+            ContentTemplate="{DataTemplate view:LoginView}"
+            Icon="{OnPlatform 'login.png', iOS='login.png', MacCatalyst='login.png'}" />
+
+        <ShellContent
+            Title="Einfügen"
+            ContentTemplate="{DataTemplate view:EinfuegenView}"
+            Icon="{OnPlatform 'edit.png', iOS='edit.png', MacCatalyst='edit.png'}" />
+        <ShellContent
+            Title="Auswertung"
+            ContentTemplate="{DataTemplate view:AuswertungView}"
+            Icon="{OnPlatform 'evaluation.png', iOS='evaluation.png', MacCatalyst='evaluation.png'}" />
+        <ShellContent
+            Title="Setting"
+            ContentTemplate="{DataTemplate view:SettingView}"
+            Icon="{OnPlatform 'setting.png', iOS='setting.png', MacCatalyst='setting.png'}" />
+    </TabBar>
+
+</Shell>
