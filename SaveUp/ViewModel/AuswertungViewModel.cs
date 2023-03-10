@@ -32,7 +32,7 @@ namespace SaveUp.ViewModel
                 handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
                 var client = new HttpClient(handler);
 
-                var request = new HttpRequestMessage(HttpMethod.Delete, $"{conf.Url}{conf.SaveUpUrl}{conf.UserName}");
+                var request = new HttpRequestMessage(HttpMethod.Delete, $"{conf.Url}{conf.SaveUpUrl}Name/{conf.UserName}");
                 request.Headers.Add("ApiKey", conf.ApiKey);
 
                 var response = await client.SendAsync(request);
@@ -41,6 +41,7 @@ namespace SaveUp.ViewModel
 
                 if (response.IsSuccessStatusCode)
                 {
+                    GetSaveUp();
                     await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gelöscht", "OK");
                 }
                 else
@@ -78,6 +79,7 @@ namespace SaveUp.ViewModel
 
                     if (response.IsSuccessStatusCode)
                     {
+                        GetSaveUp();
                         await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gelöscht", "OK");
                     }
                     else

@@ -101,17 +101,23 @@
                     LineBreakMode="WordWrap" />
 
                 <Label
-                    Text="Gessamt:"
+                    Text="Gesamt:"
                     Margin="10,0,0,0"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="End"
+                    HorizontalOptions="End"
                     FontSize="Small"
                     VerticalTextAlignment="Center"/>
 
                 <Entry
                     Margin="10,0,0,0"
                     IsReadOnly="True"
+                    VerticalTextAlignment="Center"
                     FontSize="Small"
+                    HorizontalTextAlignment="End"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
                     BackgroundColor="White"
-                    VerticalOptions="CenterAndExpand"
                     Placeholder="00.00 CHF"
                     Text="{Binding Gesammt, StringFormat='{0} CHF'}"/>
 
