@@ -71,9 +71,7 @@
                             SelectedItem="{Binding Kategorie, Mode=TwoWay}"
                             TextColor="Black" 
                             BackgroundColor="White"
-                            TitleColor="Black"
-                            Margin="0,-9,0,0"
-                            Title="Bitte Auswählen">
+                            Margin="0,-9,0,0">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Lebensmittel</x:String>

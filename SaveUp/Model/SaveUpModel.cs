@@ -61,6 +61,20 @@ namespace SaveUp.Model
             }
         }
 
+        private string _dayTime;
+        [JsonIgnore]
+        public string DayTime
+        {
+            get => _dayTime;
+            set
+            {
+                if (_dayTime != value)
+                {
+                    SetProperty(ref _dayTime, value);
+                }
+            }
+        }
+
         private string _name = string.Empty;
         [JsonPropertyName("name")]
         public string Name

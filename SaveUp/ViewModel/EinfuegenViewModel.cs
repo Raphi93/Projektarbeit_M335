@@ -18,6 +18,7 @@ namespace SaveUp.ViewModel
         {
             _cmdSave = new Command(ExecuteSave);
             GetDate();
+            SaveUp.Kategorie = "Lebensmittel";
         }
 
         private void GetDate()
@@ -28,38 +29,46 @@ namespace SaveUp.ViewModel
 
         private async void ExecuteSave()
         {
-            try
+
+            if ((SaveUp.Wert != null) && (!String.IsNullOrWhiteSpace(SaveUp.Produkt)))
             {
-
-                SaveUp.Datum = DateTime.Now;
-
-                Configuration conf = ConfigManager.LoadConfig();
-
-                SaveUp.Name = conf.UserName;
-
-                if (conf != null && !string.IsNullOrEmpty(conf.Url) && !string.IsNullOrEmpty(conf.UserUrl))
+                try
                 {
+                    SaveUp.Produkt = SaveUp.Produkt.Trim();
+                    SaveUp.Datum = DateTime.Now;
+                    SaveUp.Wert = Math.Round((double)SaveUp.Wert, 2);
 
-                    var handler = new HttpClientHandler();
-                    handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
-                    var client = new HttpClient(handler);
+                    Configuration conf = ConfigManager.LoadConfig();
+
+                    SaveUp.Name = conf.UserName;
+
+                    if (conf != null && !string.IsNullOrEmpty(conf.Url) && !string.IsNullOrEmpty(conf.UserUrl))
+                    {
+
+                        var handler = new HttpClientHandler();
+                        handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+                        var client = new HttpClient(handler);
 
 
-                    var json = JsonSerializer.Serialize(SaveUp);
-                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                        var json = JsonSerializer.Serialize(SaveUp);
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    var request = new HttpRequestMessage(HttpMethod.Post, $"{conf.Url}{conf.SaveUpUrl}");
-                    request.Headers.Add("ApiKey", conf.ApiKey);
-                    request.Content = content;
+                        var request = new HttpRequestMessage(HttpMethod.Post, $"{conf.Url}{conf.SaveUpUrl}");
+                        request.Headers.Add("ApiKey", conf.ApiKey);
+                        request.Content = content;
 
-                    var response = await client.SendAsync(request);
-                    await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gespeichert", "OK");
-
+                        var response = await client.SendAsync(request);
+                        await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gespeichert", "OK");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+                await Application.Current.MainPage.DisplayAlert("Information", "Sie müssen alles eintragen", "OK");
             }
         }
 

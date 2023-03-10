@@ -54,6 +54,7 @@
 	  <None Remove="Resources\Images\edit.png" />
 	  <None Remove="Resources\Images\evaluation.png" />
 	  <None Remove="Resources\Images\login.png" />
+	  <None Remove="Resources\Images\selection.png" />
 	  <None Remove="Resources\Images\setting.png" />
 	</ItemGroup>
 
@@ -91,9 +92,5 @@
 		</None>
 	</ItemGroup>
 		
-
-	<ItemGroup>
-	  <Folder Include="Platforms\Android\Resources\raw\localhost.crt" />
-	</ItemGroup>
 
 </Project>

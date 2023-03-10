@@ -108,7 +108,7 @@
                         Padding="20"
                         Grid.Row="0"
                         Grid.Column="0"
-                        Text="Guten Tag"/>
+                        Text="{Binding Name, StringFormat='Guten Tag {0}'}"/>
 
 
                     <Button

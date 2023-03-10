@@ -17,6 +17,7 @@ namespace SaveUp.ViewModel
         private Configuration _setting = new Configuration();
         private bool _login;
         private bool _logout;
+        private string _name;
 
         public LoginViewModel()
         {
@@ -28,6 +29,8 @@ namespace SaveUp.ViewModel
         private void IsLoginOrNot()
         {
             Configuration conf = ConfigManager.LoadConfig();
+
+            Name = conf.UserName;
 
             if (string.IsNullOrEmpty(conf.ApiKey))
             {
@@ -103,6 +106,7 @@ namespace SaveUp.ViewModel
                     conf.UserName = name;
                     conf.Password = passwd;
                     ConfigManager.SaveConfig(conf);
+                    Name = conf.UserName;
                 }
                 else
                 {
@@ -133,6 +137,10 @@ namespace SaveUp.ViewModel
             get => _login;
             set => SetProperty(ref _login, value);
         }
-
+        public string Name
+        {
+            get => _name;
+            set => SetProperty(ref _name, value);
+        }
     }
 }
