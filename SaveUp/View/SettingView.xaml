@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SaveUp.View.SettingView"
-             BackgroundColor="#276266"
+             BackgroundColor="#002147"
              Title="Setting">
     <ScrollView>
         <Grid>
