@@ -1,10 +1,6 @@
 ﻿using SaveUp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace SaveUp.ViewModel
 {
@@ -27,6 +23,11 @@ namespace SaveUp.ViewModel
             Date = now.ToString("dd.MM.yyyy");
         }
 
+
+        /// <summary>
+        /// Führt den Speichervorgang für einen neuen Eintrag aus.
+        /// </summary>
+        /// <exception cref="Exception">Wirft eine Ausnahme, wenn ein Fehler bei der Ausführung des Speichervorgangs auftritt.</exception>
         private async void ExecuteSave()
         {
 

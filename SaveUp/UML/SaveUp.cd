@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SaveUp.ViewModel.AuswertungViewModel">
+    <Position X="2.25" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>wAAACQAAAAAAAAAhIAAABQAAAAEAAAAQEAAAQAAAAAA=</HashCode>
+      <FileName>ViewModel\AuswertungViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.ViewModel.LoginViewModel">
+    <Position X="9.25" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAgQAARAAgAAAAQYAACAAAACAQAAQIAAAAAA=</HashCode>
+      <FileName>ViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.ViewModel.EinfuegenViewModel">
+    <Position X="6" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAUAAQAAJAAAAQAAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\EinfuegenViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.ViewModel.ViewModelBase">
+    <Position X="4.75" Y="2" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SaveUp.View.AuswertungView">
+    <Position X="12" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AuswertungView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.View.EinfuegenView">
+    <Position X="14.25" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\EinfuegenView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.View.LoginView">
+    <Position X="12.25" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>View\LoginView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.View.SettingView">
+    <Position X="14.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SettingView.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.AppShell">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppShell.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveUp.MauiProgram">
+    <Position X="15.25" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MauiProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

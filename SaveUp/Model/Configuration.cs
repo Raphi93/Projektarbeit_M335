@@ -62,6 +62,19 @@ namespace SaveUp.Model
             }
         }
 
+        private string _delete = string.Empty;
+        public string Delete
+        {
+            get => _delete;
+            set
+            {
+                if (_delete != value)
+                {
+                    SetProperty(ref _delete, value);
+                }
+            }
+        }
+
         private string _userName = string.Empty;
         public string UserName
         {

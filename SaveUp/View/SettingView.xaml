@@ -10,7 +10,7 @@
                 <RowDefinition
                     Height="1*" />
                 <RowDefinition
-                    Height="200" />
+                    Height="240" />
                 <RowDefinition
                     Height="1*" />
             </Grid.RowDefinitions>
@@ -28,6 +28,8 @@
 
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="40" />
                         <RowDefinition
                             Height="40" />
                         <RowDefinition
@@ -80,8 +82,20 @@
                         Grid.Row="2"
                         Grid.Column="1"/>
 
-                    <Button
+                    <Label
+                        Style="{StaticResource lblWetter}"
                         Grid.Row="3"
+                        Grid.Column="0"
+                        Text="Delete All" />
+                    <Entry
+                        Style="{StaticResource entryConfig}"
+                        BindingContext="{Binding Config}"
+                        Text="{Binding Delete, Mode=TwoWay}"
+                        Grid.Row="3"
+                        Grid.Column="1"/>
+
+                    <Button
+                        Grid.Row="4"
                         Grid.Column="1"
                         VerticalOptions="End"
                         HorizontalOptions="End"
@@ -90,8 +104,7 @@
                         BackgroundColor="Black"
                         Command="{Binding CmdSave}"
                         TextColor="White"
-                        Text="Save">
-                    </Button>
+                        Text="Save"/>
 
                 </Grid>
             </Border>

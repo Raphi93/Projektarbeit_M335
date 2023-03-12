@@ -70,6 +70,7 @@
                             BindingContext="{Binding SaveUp}"
                             SelectedItem="{Binding Kategorie, Mode=TwoWay}"
                             TextColor="Black" 
+                            FontSize="Medium"
                             BackgroundColor="White"
                             Margin="0,-9,0,0">
                         <Picker.ItemsSource>

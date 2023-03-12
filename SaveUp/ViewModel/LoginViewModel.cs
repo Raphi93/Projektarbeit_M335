@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
 using SaveUp.Model;
-using System.Net.Http;
-using SaveUp.View;
 using System.Net;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json;
 
 
 namespace SaveUp.ViewModel
@@ -26,6 +23,10 @@ namespace SaveUp.ViewModel
             IsLoginOrNot();
         }
 
+
+        /// <summary>
+        /// Überprüft, ob der Benutzer angemeldet ist oder nicht.
+        /// </summary>
         private void IsLoginOrNot()
         {
             Configuration conf = ConfigManager.LoadConfig();
@@ -44,7 +45,9 @@ namespace SaveUp.ViewModel
             }
         }
 
-
+        /// <summary>
+        /// Der Benutzer kann sich auslogen
+        /// </summary>
         private void ExecuteLogout()
         {
             Configuration conf = ConfigManager.LoadConfig();
@@ -54,6 +57,10 @@ namespace SaveUp.ViewModel
             Logout = false;
         }
 
+
+        /// <summary>
+        /// Executes the save operation.
+        /// </summary>
         private async void ExecuteSave()
         {
             string name = Config.UserName;

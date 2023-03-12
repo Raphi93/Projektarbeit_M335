@@ -1,10 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using SaveUp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SaveUp.Model;
 
 namespace SaveUp.ViewModel
 {
@@ -19,18 +13,26 @@ namespace SaveUp.ViewModel
             ShowContent();
         }
 
+        /// <summary>
+        /// Methode zum Anzeigen der Konfiguration
+        /// </summary>
         private void ShowContent()
         {
             Configuration conf = ConfigManager.LoadConfig();
             Config = conf;
         }
 
+
+        /// <summary>
+        /// Methode zum Speichern der Konfiguration
+        /// </summary>
         private async void ExecuteSave()
         {
             Configuration conf = ConfigManager.LoadConfig();
             conf.Url = Config.Url;
             conf.SaveUpUrl = Config.SaveUpUrl;
             conf.UserUrl = Config.UserUrl;
+            conf.Delete = Config.Delete;
             ConfigManager.SaveConfig(conf);
             await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind gespeichert", "OK");
         }

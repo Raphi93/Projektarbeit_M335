@@ -1,10 +1,5 @@
 ﻿using SaveUp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace SaveUp.ViewModel
 {
@@ -23,6 +18,11 @@ namespace SaveUp.ViewModel
             GetSaveUp();
         }
 
+
+        /// <summary>
+        /// Führt den Löschvorgang aus, um Daten vom Server zu löschen.
+        /// </summary>
+        /// <exception cref="Exception">Wirft eine Ausnahme, wenn ein Fehler bei der Ausführung des Löschvorgangs auftritt.</exception>
         private async void ExecuteDelete()
         {
             try
@@ -32,7 +32,7 @@ namespace SaveUp.ViewModel
                 handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
                 var client = new HttpClient(handler);
 
-                var request = new HttpRequestMessage(HttpMethod.Delete, $"{conf.Url}{conf.SaveUpUrl}Name/{conf.UserName}");
+                var request = new HttpRequestMessage(HttpMethod.Delete, $"{conf.Url}{conf.SaveUpUrl}{conf.Delete}{conf.UserName}");
                 request.Headers.Add("ApiKey", conf.ApiKey);
 
                 var response = await client.SendAsync(request);
@@ -41,8 +41,8 @@ namespace SaveUp.ViewModel
 
                 if (response.IsSuccessStatusCode)
                 {
-                    GetSaveUp();
                     await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gelöscht", "OK");
+                    GetSaveUp();
                 }
                 else
                 {
@@ -55,6 +55,10 @@ namespace SaveUp.ViewModel
             }
         }
 
+        /// <summary>
+        /// Führt den Löschvorgang für einen ausgewählten Eintrag aus.
+        /// </summary>
+        /// <exception cref="Exception">Wirft eine Ausnahme, wenn ein Fehler bei der Ausführung des Löschvorgangs auftritt.</exception>
         private async void ExecuteDeleteOne()
         {
             if (_selectedSaveUp == null)
@@ -79,8 +83,8 @@ namespace SaveUp.ViewModel
 
                     if (response.IsSuccessStatusCode)
                     {
-                        GetSaveUp();
                         await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gelöscht", "OK");
+                        GetSaveUp();
                     }
                     else
                     {
@@ -96,6 +100,10 @@ namespace SaveUp.ViewModel
             }
         }
 
+        /// <summary>
+        /// Ruft Daten vom Server ab.
+        /// </summary>
+        /// <exception cref="Exception">Wirft eine Ausnahme, wenn ein Fehler beim Abrufen der Daten vom Server auftritt.</exception>
         private async void GetSaveUp()
         {
             try
@@ -118,7 +126,8 @@ namespace SaveUp.ViewModel
                     {
                         var datas = await response.Content.ReadAsStringAsync();
                         var tempData = JsonSerializer.Deserialize<List<SaveUpModel>>(datas);
-                        
+                        Gesammt = 0;
+
                         foreach (var Item in tempData)
                         {
                             Item.DayTime = Item.Datum.ToString("dd.MM.yyyy");
