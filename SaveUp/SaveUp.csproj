@@ -59,6 +59,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="View\EinfuegenView.xaml.cs">
 	    <DependentUpon>EinfuegenView.xaml</DependentUpon>
 	  </Compile>

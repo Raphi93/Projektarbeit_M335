@@ -22,7 +22,6 @@ namespace SaveUp.ViewModel
             Config = conf;
         }
 
-
         /// <summary>
         /// Methode zum Speichern der Konfiguration
         /// </summary>
