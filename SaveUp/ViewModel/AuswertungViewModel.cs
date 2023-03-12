@@ -134,7 +134,7 @@ namespace SaveUp.ViewModel
                         foreach (var Item in tempData)
                         {
                             Item.DayTime = Item.Datum.ToString("dd.MM.yyyy");
-                            Gesammt += (double)Item.Wert;
+                            Gesammt += Math.Round((double)Item.Wert, 2);
                         }
                         SaveUp = tempData;
                     }

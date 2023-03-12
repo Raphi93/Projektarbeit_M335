@@ -10,4 +10,10 @@ public partial class EinfuegenView : ContentPage
 		BindingContext = _einfuegen;
 		InitializeComponent();
 	}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        _einfuegen = new EinfuegenViewModel();
+        BindingContext = _einfuegen;
+    }
 }

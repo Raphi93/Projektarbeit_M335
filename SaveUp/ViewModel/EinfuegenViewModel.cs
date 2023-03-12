@@ -15,7 +15,7 @@ namespace SaveUp.ViewModel
             _cmdSave = new Command(ExecuteSave);
             GetDate();
             SaveUp.Kategorie = "Lebensmittel";
-            SaveUp.Produkt = "";
+            SaveUp.Produkt = null;
             SaveUp.Wert = null;
         }
 
@@ -61,6 +61,8 @@ namespace SaveUp.ViewModel
                         request.Content = content;
 
                         var response = await client.SendAsync(request);
+                        SaveUp.Produkt = null;
+                        SaveUp.Wert = null;
                         await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gespeichert", "OK");
                     }
                 }
