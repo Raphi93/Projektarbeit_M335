@@ -16,6 +16,7 @@ namespace SaveUp.ViewModel
             _cmdDeleteOne = new Command(ExecuteDeleteOne);
             _cmdDelete = new Command(ExecuteDelete);
             GetSaveUp();
+            SelectedSaveUp = null;
         }
 
 
@@ -43,6 +44,7 @@ namespace SaveUp.ViewModel
                 {
                     await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gelöscht", "OK");
                     GetSaveUp();
+                    SelectedSaveUp = null;
                 }
                 else
                 {
@@ -85,6 +87,7 @@ namespace SaveUp.ViewModel
                     {
                         await Application.Current.MainPage.DisplayAlert("Information", "Die Daten sind Gelöscht", "OK");
                         GetSaveUp();
+                        SelectedSaveUp = null;
                     }
                     else
                     {

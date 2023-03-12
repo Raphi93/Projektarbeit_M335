@@ -15,6 +15,8 @@ namespace SaveUp.ViewModel
             _cmdSave = new Command(ExecuteSave);
             GetDate();
             SaveUp.Kategorie = "Lebensmittel";
+            SaveUp.Produkt = "";
+            SaveUp.Wert = null;
         }
 
         private void GetDate()
