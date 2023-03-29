@@ -90,6 +90,9 @@
 		<None Update="Resources\xml\network_security_config.xml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
+		<None Update="UML\SaveUp.cd">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 		
 

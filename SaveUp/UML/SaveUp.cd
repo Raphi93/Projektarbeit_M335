@@ -39,7 +39,7 @@
   <Class Name="SaveUp.View.EinfuegenView">
     <Position X="14.25" Y="5.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\EinfuegenView.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
